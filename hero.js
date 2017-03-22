@@ -3,8 +3,16 @@ var Hero = function(name, health, favFood) {
   this.health = health;
   this.favFood = favFood;
   this.talk = function() {
-    console.log(this);
+    // console.log(this);
     return "Hi my name is " + this.name;
+  };
+  this.eat = function(food, healValue) {
+    console.log(this);
+    if(food.name === favFood) {
+      this.health += (food.healValue * 1.5);
+    }
+    else
+      this.health += food.healValue;
   };
 };
 
